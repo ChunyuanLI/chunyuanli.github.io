@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>
+
+  Chunyuan  Li
+
+
+  | Efficient Self-supervised Vision Transformers
+
+</title>
+<meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Styles -->
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="canonical" href="/projects/1_project/">
+
+
+<!-- Dark Mode -->
+<script src="/assets/js/theme.js"></script>
+<script src="/assets/js/dark_mode.js"></script>
+
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="http://localhost:4000/">
+       <span class="font-weight-bold">Chunyuan</span>   Li
+      </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              about
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/blog/">
+              blog
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/projects/">
+                projects
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications/">
+                publications
+                
+              </a>
+          </li>
+          
+          
+          
+          
+            <div class="toggle-container">
+              <a id="light-toggle">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+              </a>
+            </div>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Efficient Self-supervised Vision Transformers</h1>
+    <p class="post-description">Learning visual representation from unlabelled images</p>
+  </header>
+
+  <article>
+    <p>Self-supervised learning (SSL) with Transformers has become a de facto standard of model choice in natural language processing (NLP). The dominant approaches such as GPT and BERT are pre-training on a large text corpus and then fine-tuning to various smaller task-specific datasets, showing superior performance. In computer vision (CV), however, self-supervised visual representation learning is still dominated by convolutional neural networks (CNNs). Sharing a similar goal/spirit with NLP, SSL in CV aims to learn general-purpose image features from raw pixels without relying on manual supervisions. Prior SoTA methods on linear probe evaluation of ImageNet-1K is achieved, by exhaustively consuming computation resource on full self-attention operators with long sequences of split image patches. Aiming to improve the efficiency of Transformer-based SSL in CV paves the way to achieve Green AI.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
+
+
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/1-800x534.jpg" srcset="    /assets/resized/1-480x320.jpg 480w,    /assets/resized/1-800x534.jpg 800w,/ assets/img/1.jpg 1000w" title="example image">
+
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        
+
+
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/3-1400x933.jpg" srcset="    /assets/resized/3-480x320.jpg 480w,    /assets/resized/3-800x533.jpg 800w,    /assets/resized/3-1400x933.jpg 1400w,/ assets/img/3.jpg 2000w" title="example image">
+
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        
+
+
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/5-1400x933.jpg" srcset="    /assets/resized/5-480x320.jpg 480w,    /assets/resized/5-800x533.jpg 800w,    /assets/resized/5-1400x933.jpg 1400w,/ assets/img/5.jpg 3000w" title="example image">
+
+    </div>
+</div>
+<div class="caption">
+    Self-supervised learning (SSL) in computer vision aims to learn general-purpose image features from raw pixels without relying on manual supervisions,
+and the learned networks serve as the backbone of various downstream tasks such as classification,
+detection and segmentation
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
+
+
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/esvit_sota-1400x463.png" srcset="    /assets/resized/esvit_sota-480x159.png 480w,    /assets/resized/esvit_sota-800x264.png 800w,    /assets/resized/esvit_sota-1400x463.png 1400w,/ assets/img/esvit_sota.png 1564w" title="example image">
+
+    </div>
+</div>
+<div class="caption">
+    Efficiency vs accuracy comparison under the linear classification protocol on ImageNet. Left: Throughput of all SoTA SSL vision systems, circle sizes indicates model parameter counts; Right: performance over varied parameter counts for models with moderate (throughout/#parameters) ratio. Please refer Section 4.1 for details.
+</div>
+
+<p>PyTorch implementation for EsViT, built with two techniques:</p>
+
+<ul>
+  <li>A multi-stage Transformer architecture. Three multi-stage Transformer variants are implemented under the folder <code class="language-plaintext highlighter-rouge">models</code>.</li>
+  <li>A non-contrastive region-level matching pre-train task. The region-level matching task is implemented in function RegionMathcingLoss(nn.Module) in main_esvit.py. Please use <code class="language-plaintext highlighter-rouge">--use_dense_prediction True</code>, otherwise only the view-level task is used.</li>
+</ul>
+
+<p>The code of the non-contrastive region-level matching pre-train task is simple. Just add <code class="language-plaintext highlighter-rouge">RegionMathcingLoss</code> into the view-level pre-train loss. Here’s the code:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">RegionMathcingLoss</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out_dim</span><span class="p">,</span> <span class="n">ncrops</span><span class="p">,</span> <span class="n">warmup_teacher_temp</span><span class="p">,</span> <span class="n">teacher_temp</span><span class="p">,</span>
+                 <span class="n">warmup_teacher_temp_epochs</span><span class="p">,</span> <span class="n">nepochs</span><span class="p">,</span> <span class="n">student_temp</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+                 <span class="n">center_momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">student_temp</span> <span class="o">=</span> <span class="n">student_temp</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">center_momentum</span> <span class="o">=</span> <span class="n">center_momentum</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">ncrops</span> <span class="o">=</span> <span class="n">ncrops</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">register_buffer</span><span class="p">(</span><span class="s">"center"</span><span class="p">,</span> <span class="n">torch</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">out_dim</span><span class="p">))</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">register_buffer</span><span class="p">(</span><span class="s">"center_grid"</span><span class="p">,</span> <span class="n">torch</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">out_dim</span><span class="p">))</span>
+
+
+        <span class="c1"># we apply a warm up for the teacher temperature because
+</span>        <span class="c1"># a too high temperature makes the training instable at the beginning
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">teacher_temp_schedule</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">concatenate</span><span class="p">((</span>
+            <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">warmup_teacher_temp</span><span class="p">,</span>
+                        <span class="n">teacher_temp</span><span class="p">,</span> <span class="n">warmup_teacher_temp_epochs</span><span class="p">),</span>
+            <span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nepochs</span> <span class="o">-</span> <span class="n">warmup_teacher_temp_epochs</span><span class="p">)</span> <span class="o">*</span> <span class="n">teacher_temp</span>
+        <span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">student_output</span><span class="p">,</span> <span class="n">teacher_output</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">targets_mixup</span><span class="p">):</span>
+        <span class="s">"""
+        Cross-entropy between softmax outputs of the teacher and student networks.
+        """</span>
+
+
+        <span class="n">s_cls_out</span><span class="p">,</span> <span class="n">s_region_out</span><span class="p">,</span> <span class="n">s_fea</span><span class="p">,</span> <span class="n">s_npatch</span> <span class="o">=</span> <span class="n">student_output</span>
+        <span class="n">t_cls_out</span><span class="p">,</span> <span class="n">t_region_out</span><span class="p">,</span> <span class="n">t_fea</span><span class="p">,</span> <span class="n">t_npatch</span> <span class="o">=</span> <span class="n">teacher_output</span>
+
+        <span class="c1"># teacher centering and sharpening
+</span>        <span class="n">temp</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">teacher_temp_schedule</span><span class="p">[</span><span class="n">epoch</span><span class="p">]</span>
+        <span class="n">t_cls</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="n">softmax</span><span class="p">((</span><span class="n">t_cls_out</span> <span class="o">-</span> <span class="bp">self</span><span class="p">.</span><span class="n">center</span><span class="p">)</span> <span class="o">/</span> <span class="n">temp</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">t_cls</span> <span class="o">=</span> <span class="n">t_cls</span><span class="p">.</span><span class="n">detach</span><span class="p">().</span><span class="n">chunk</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">t_region</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="n">softmax</span><span class="p">((</span><span class="n">t_region_out</span> <span class="o">-</span> <span class="bp">self</span><span class="p">.</span><span class="n">center_grid</span><span class="p">)</span> <span class="o">/</span> <span class="n">temp</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">t_region</span> <span class="o">=</span> <span class="n">t_region</span><span class="p">.</span><span class="n">detach</span><span class="p">().</span><span class="n">chunk</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">t_fea</span> <span class="o">=</span> <span class="n">t_fea</span><span class="p">.</span><span class="n">chunk</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+        
+        <span class="n">N</span> <span class="o">=</span> <span class="n">t_npatch</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># num of patches in the first view
+</span>        <span class="n">B</span> <span class="o">=</span> <span class="n">t_region</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="n">N</span> <span class="c1"># batch size, 
+</span>
+        <span class="c1"># student sharpening
+</span>        <span class="n">s_cls</span> <span class="o">=</span> <span class="n">s_cls_out</span> <span class="o">/</span> <span class="bp">self</span><span class="p">.</span><span class="n">student_temp</span>
+        <span class="n">s_cls</span> <span class="o">=</span> <span class="n">s_cls</span><span class="p">.</span><span class="n">chunk</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">ncrops</span><span class="p">)</span>
+
+        <span class="n">s_region</span> <span class="o">=</span> <span class="n">s_region_out</span> <span class="o">/</span> <span class="bp">self</span><span class="p">.</span><span class="n">student_temp</span>
+        <span class="n">s_split_size</span> <span class="o">=</span> <span class="p">[</span><span class="n">s_npatch</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">[</span><span class="n">s_npatch</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">ncrops</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span> 
+        
+        <span class="n">s_split_size_bs</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">B</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s_split_size</span><span class="p">]</span>
+        
+        <span class="n">s_region</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="n">s_region</span><span class="p">,</span> <span class="n">s_split_size_bs</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">s_fea</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="n">s_fea</span><span class="p">,</span> <span class="n">s_split_size_bs</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+
+
+        <span class="n">total_loss</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">n_loss_terms</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">iq</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">t_cls</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s_cls</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">iq</span><span class="p">:</span>
+                    <span class="c1"># we skip cases where student and teacher operate on the same view
+</span>                    <span class="k">continue</span>
+                
+                <span class="c1"># view level prediction loss
+</span>                <span class="n">loss</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">torch</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="o">-</span><span class="n">q</span> <span class="o">*</span> <span class="n">F</span><span class="p">.</span><span class="n">log_softmax</span><span class="p">(</span><span class="n">s_cls</span><span class="p">[</span><span class="n">v</span><span class="p">],</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+                <span class="c1"># region level prediction loss
+</span>                <span class="n">s_region_cur</span><span class="p">,</span> <span class="n">s_fea_cur</span> <span class="o">=</span> <span class="n">s_region</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">view</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">s_split_size</span><span class="p">[</span><span class="n">v</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">s_fea</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">view</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">s_split_size</span><span class="p">[</span><span class="n">v</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># B x T_s x K, B x T_s x P
+</span>                <span class="n">t_region_cur</span><span class="p">,</span> <span class="n">t_fea_cur</span> <span class="o">=</span> <span class="n">t_region</span><span class="p">[</span><span class="n">iq</span><span class="p">].</span><span class="n">view</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">t_fea</span><span class="p">[</span><span class="n">iq</span><span class="p">].</span><span class="n">view</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># B x T_t x K, B x T_t x P, 
+</span>
+                <span class="c1"># similarity matrix between two sets of region features
+</span>                <span class="n">region_sim_matrix</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">F</span><span class="p">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">s_fea_cur</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="p">,</span> <span class="n">F</span><span class="p">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">t_fea_cur</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="p">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># B x T_s x T_t
+</span>                <span class="n">region_sim_ind</span> <span class="o">=</span> <span class="n">region_sim_matrix</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># B x T_s; collect the argmax index in teacher for a given student feature
+</span>                
+                <span class="n">t_indexed_region</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">gather</span><span class="p">(</span> <span class="n">t_region_cur</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">region_sim_ind</span><span class="p">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="n">expand</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">t_region_cur</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="p">)</span> <span class="c1"># B x T_s x K (index matrix: B, T_s, 1)
+</span>
+                <span class="n">loss_grid</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="o">-</span> <span class="n">t_indexed_region</span> <span class="o">*</span> <span class="n">F</span><span class="p">.</span><span class="n">log_softmax</span><span class="p">(</span><span class="n">s_region_cur</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="n">dim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]).</span><span class="n">mean</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># B x T_s x K --&gt; B 
+</span>
+                <span class="n">loss</span> <span class="o">+=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">loss_grid</span>
+
+                <span class="n">total_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span>
+                <span class="n">n_loss_terms</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">total_loss</span> <span class="o">/=</span> <span class="n">n_loss_terms</span>
+
+        <span class="bp">self</span><span class="p">.</span><span class="n">update_center</span><span class="p">(</span><span class="n">t_cls_out</span><span class="p">,</span> <span class="n">t_region_out</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">total_loss</span>
+
+    <span class="o">@</span><span class="n">torch</span><span class="p">.</span><span class="n">no_grad</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">update_center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">teacher_output</span><span class="p">,</span> <span class="n">teacher_grid_output</span><span class="p">):</span>
+        <span class="s">"""
+        Update center used for teacher output.
+        """</span>
+
+        <span class="c1"># view level center update
+</span>        <span class="n">batch_center</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">teacher_output</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">dist</span><span class="p">.</span><span class="n">all_reduce</span><span class="p">(</span><span class="n">batch_center</span><span class="p">)</span>
+        <span class="n">batch_center</span> <span class="o">=</span> <span class="n">batch_center</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">teacher_output</span><span class="p">)</span> <span class="o">*</span> <span class="n">dist</span><span class="p">.</span><span class="n">get_world_size</span><span class="p">())</span>
+
+        <span class="c1"># region level center update
+</span>        <span class="n">batch_grid_center</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">teacher_grid_output</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">dist</span><span class="p">.</span><span class="n">all_reduce</span><span class="p">(</span><span class="n">batch_grid_center</span><span class="p">)</span>
+        <span class="n">batch_grid_center</span> <span class="o">=</span> <span class="n">batch_grid_center</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">teacher_grid_output</span><span class="p">)</span> <span class="o">*</span> <span class="n">dist</span><span class="p">.</span><span class="n">get_world_size</span><span class="p">())</span>
+
+        <span class="c1"># ema update
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">center</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">center</span> <span class="o">*</span> <span class="bp">self</span><span class="p">.</span><span class="n">center_momentum</span> <span class="o">+</span> <span class="n">batch_center</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="p">.</span><span class="n">center_momentum</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">center_grid</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">center_grid</span> <span class="o">*</span> <span class="bp">self</span><span class="p">.</span><span class="n">center_momentum</span> <span class="o">+</span> <span class="n">batch_grid_center</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="p">.</span><span class="n">center_momentum</span><span class="p">)</span>
+</code></pre></div></div>
+
+
+  </article>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    © Copyright 2021 Chunyuan  Li.
+    Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.
+
+    
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Medium Zoom JS -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/assets/js/zoom.js"></script>
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+  
+<!-- MathJax -->
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  
+
+
+
+
+
+</html>
