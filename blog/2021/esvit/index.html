@@ -38,7 +38,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/projects/1_project/">
+<link rel="canonical" href="/blog/2021/esvit/">
 
 
 <!-- Dark Mode -->
@@ -81,7 +81,7 @@
           </li>
           
           <!-- Blog -->
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="/blog/">
               blog
               
@@ -148,15 +148,32 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
+
+
+
+
+
+<div class="post">
 
   <header class="post-header">
     <h1 class="post-title">Efficient Self-supervised Vision Transformers</h1>
-    <p class="post-description">Learning visual representation from unlabelled images</p>
+    <p class="post-meta">June 17, 2021</p>
+    <p class="post-tags">
+      <a href="/blog/2021"> <i class="fas fa-calendar fa-sm"></i> 2021 </a>
+      
+
+      
+
+    </p>
   </header>
 
-  <article>
-    <p>Self-supervised learning (SSL) with Transformers has become a de facto standard of model choice in natural language processing (NLP). The dominant approaches such as GPT and BERT are pre-training on a large text corpus and then fine-tuning to various smaller task-specific datasets, showing superior performance. In computer vision (CV), however, self-supervised visual representation learning is still dominated by convolutional neural networks (CNNs). Sharing a similar goal/spirit with NLP, SSL in CV aims to learn general-purpose image features from raw pixels without relying on manual supervisions. Prior SoTA methods on linear probe evaluation of ImageNet-1K is achieved, by exhaustively consuming computation resource on full self-attention operators with long sequences of split image patches. Aiming to improve the efficiency of Transformer-based SSL in CV paves the way to achieve Green AI.</p>
+  <article class="post-content">
+    <p>This writeup is used as a placeholder for blog drafting</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Self-supervised learning (SSL) with Transformers has become a de facto standard of model choice in natural language processing (NLP). The dominant approaches such as GPT and BERT are pre-training on a large text corpus and then fine-tuning to various smaller task-specific datasets, showing superior performance. In computer vision (CV), however, self-supervised visual representation learning is still dominated by convolutional neural networks (CNNs). Sharing a similar goal/spirit with NLP, SSL in CV aims to learn general-purpose image features from raw pixels without relying on manual supervisions. Prior SoTA methods on linear probe evaluation of ImageNet-1K is achieved, by exhaustively consuming computation resource on full self-attention operators with long sequences of split image patches. Aiming to improve the efficiency of Transformer-based SSL in CV paves the way to achieve Green AI.</p>
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -186,6 +203,16 @@
 and the learned networks serve as the backbone of various downstream tasks such as classification,
 detection and segmentation
 </div>
+
+<h2 id="esvit">EsViT</h2>
+
+<p>PyTorch implementation for EsViT, built with two techniques:</p>
+
+<ul>
+  <li>A multi-stage Transformer architecture. Three multi-stage Transformer variants are implemented under the folder <code class="language-plaintext highlighter-rouge">models</code>.</li>
+  <li>A non-contrastive region-level matching pre-train task. The region-level matching task is implemented in function RegionMathcingLoss(nn.Module) in main_esvit.py. Please use <code class="language-plaintext highlighter-rouge">--use_dense_prediction True</code>, otherwise only the view-level task is used.</li>
+</ul>
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         
@@ -198,13 +225,6 @@ detection and segmentation
 <div class="caption">
     Efficiency vs accuracy comparison under the linear classification protocol on ImageNet. Left: Throughput of all SoTA SSL vision systems, circle sizes indicates model parameter counts; Right: performance over varied parameter counts for models with moderate (throughout/#parameters) ratio. Please refer Section 4.1 for details.
 </div>
-
-<p>PyTorch implementation for EsViT, built with two techniques:</p>
-
-<ul>
-  <li>A multi-stage Transformer architecture. Three multi-stage Transformer variants are implemented under the folder <code class="language-plaintext highlighter-rouge">models</code>.</li>
-  <li>A non-contrastive region-level matching pre-train task. The region-level matching task is implemented in function RegionMathcingLoss(nn.Module) in main_esvit.py. Please use <code class="language-plaintext highlighter-rouge">--use_dense_prediction True</code>, otherwise only the view-level task is used.</li>
-</ul>
 
 <p>The code of the non-contrastive region-level matching pre-train task is simple. Just add <code class="language-plaintext highlighter-rouge">RegionMathcingLoss</code> into the view-level pre-train loss. Here’s the code:</p>
 
@@ -320,6 +340,8 @@ detection and segmentation
 
 
   </article>
+
+  
 
 </div>
 
