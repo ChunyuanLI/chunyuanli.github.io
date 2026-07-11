@@ -88,9 +88,9 @@ blockquote { background: var(--global-bg-color); border-left: 2px solid var(--gl
 
 .news-archive { margin-top: 0.25rem; border-top: 0; border-bottom: 0; }
 
-.news-archive summary { display: inline-block; color: var(--global-text-color-light); font-size: 0.9rem; font-weight: 400; padding: 0.15rem 0; }
+.news-archive summary { display: inline-flex; align-items: center; gap: 0.45rem; color: var(--global-text-color-light); font-size: 0.9rem; font-weight: 400; padding: 0.15rem 0; white-space: nowrap; }
 
-.news-archive .theme-toggle-inline { display: inline-flex; align-items: center; margin-left: 0.45rem; color: var(--global-text-color-light); font-size: 1rem; line-height: 1; vertical-align: -0.05em; cursor: pointer; }
+.news-archive .theme-toggle-inline { display: inline-flex; align-items: center; color: var(--global-text-color-light); font-size: 1rem; line-height: 1; cursor: pointer; }
 
 .news-archive .theme-toggle-inline:hover { color: var(--global-theme-color); text-decoration: none; }
 
