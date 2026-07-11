@@ -104,6 +104,8 @@ blockquote { background: var(--global-bg-color); border-left: 2px solid var(--gl
 
 .navbar-toggler.collapsed .bottom-bar { transform: rotate(0); }
 
+.news h2 { font-size: 1.2rem; font-weight: 400; color: var(--global-text-color-light); }
+
 .news table td { font-size: 1rem; color: var(--global-text-color); }
 
 .news table th { color: var(--global-text-color); }
