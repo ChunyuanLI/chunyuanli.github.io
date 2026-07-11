@@ -44,13 +44,13 @@ blockquote { background: var(--global-bg-color); border-left: 2px solid var(--gl
 
 .citation, .citation-number { color: var(--global-theme-color); }
 
-.profile { margin-left: 1rem; width: 100%; }
+.profile { margin-left: 0; margin-bottom: 1rem; width: 100%; }
 
 .profile .address { margin-bottom: 5px; margin-top: 5px; font-family: monospace; }
 
 .profile .address p { display: inline-block; margin: 0; }
 
-@media (min-width: 576px) { .profile { width: 18%; } .profile .address p { display: block; } }
+@media (min-width: 576px) { .profile { margin-left: 1rem; margin-bottom: 0; width: 18%; } .profile .address p { display: block; } }
 
 .post-description { margin-bottom: 2rem; font-size: 0.875rem; }
 
